@@ -6,6 +6,12 @@ dotenv.config()
 const port = process.env.port
 app.use(express.json())
 
+app.use(((req,res)=>{
+    return res.json({
+        msg: '/ route'
+    })
+}))
+
 app.post('api/v1/symptomChecker',async (req,res)=>{
     try {
         const data = req.body
