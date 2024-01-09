@@ -28,6 +28,6 @@ app.post('/api/v1/symptomChecker',async (req,res)=>{
     }
 })
 
-app.listen(port,()=>{
+app.listen(port,'0.0.0.0',()=>{
     console.log('Server Started at',port)
 })
