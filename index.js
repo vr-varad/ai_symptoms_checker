@@ -7,7 +7,7 @@ const port = process.env.port
 app.use(express.json())
 
 app.use('/',((req,res)=>{
-    return res.json({
+    res.json({
         msg: '/ route'
     })
 }))
