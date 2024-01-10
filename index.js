@@ -4,7 +4,7 @@ const run = require('./symplomChecker')
 const dotenv = require('dotenv')
 const bodyParser = require('body-parser'); 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
 dotenv.config()
 const port = process.env.port
 
@@ -15,11 +15,8 @@ app.get('/',((req,res)=>{
 }))
 
 app.post('/api/v1/symptomChecker',async (req,res)=>{
-    console.log(1)
-    console.log(req)
     try {
         const data = req.body
-        console.log(req.body)
         const result = await run(data)
         return res.status(200).json({
             message:'Success',
