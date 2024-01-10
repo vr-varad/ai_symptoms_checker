@@ -16,6 +16,8 @@ app.get('/',((req,res)=>{
 }))
 
 app.post('/api/v1/symptomChecker',async (req,res)=>{
+    console.log(1)
+    console.log(req)
     try {
         const data = req.body
         console.log(req.body)
