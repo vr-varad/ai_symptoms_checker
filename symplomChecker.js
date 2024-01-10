@@ -6,6 +6,7 @@ dotenv.config()
 const genAI = new GoogleGenerativeAI(process.env.api_key);
 
 async function run(data) {
+  console.log(data)
   // For text-only input, use the gemini-pro model
   const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
