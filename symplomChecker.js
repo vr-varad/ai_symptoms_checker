@@ -28,6 +28,7 @@ async function run(data) {
 14. Occasional Drug Use: ${data.occasional_drug_use}
   `;
   console.log(1)
+  console.log(prompt)
   const result = await model.generateContent(prompt);
   console.log(2)
   const response = await result.response;
