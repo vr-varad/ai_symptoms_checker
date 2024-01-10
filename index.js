@@ -7,7 +7,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 dotenv.config()
 const port = process.env.port
-app.use(express.json())
 
 app.get('/',((req,res)=>{
     res.json({
