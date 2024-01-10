@@ -18,6 +18,7 @@ app.get('/',((req,res)=>{
 app.post('/api/v1/symptomChecker',async (req,res)=>{
     try {
         const data = req.body
+        console.log(req.body)
         const result = await run(data)
         return res.status(200).json({
             message:'Success',
