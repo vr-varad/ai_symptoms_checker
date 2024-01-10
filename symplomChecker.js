@@ -6,7 +6,6 @@ dotenv.config()
 const genAI = new GoogleGenerativeAI(process.env.api_key);
 
 async function run(data) {
-  console.log(process.env.api_key)
   // For text-only input, use the gemini-pro model
   const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
@@ -28,10 +27,13 @@ async function run(data) {
 13. Alcohol Intake: ${data.alcohol_intake}
 14. Occasional Drug Use: ${data.occasional_drug_use}
   `;
-
+  console.log(1)
   const result = await model.generateContent(prompt);
+  console.log(2)
   const response = await result.response;
+  console.log(3)
   const text = response.text();
+  console.log(4)
   console.log(text)
   return text;
 }
